@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="light">
+      <p routerLink="/segunda" class="fonface">BeneficioSi</p>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/map">
+        <ion-icon style="color: white;" name="globe"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon style="color: white;" name="cart"></ion-icon>
+        <ion-badge color="light">{{contadorItems | async}}</ion-badge>
+      </ion-button>
+      <ion-button>
+        <ion-icon style="color: white;" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+      <!--google maps-->
+      <div #googlemaps id="googlemaps">
+
+      </div>
+
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label>
+          <h4>Mirano</h4>
+          <p>Güise 1873</p>
+          <p>A 3.33 Km</p>      
+        </ion-label>
+        <ion-buttons slot="end">
+          <ion-button color="danger">
+            Ver en mapa
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+      <ion-item>
+        <h5>¿Preguntas sobre alérgenos?</h5>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <p class="ion-text-wrap">Pregunta al restaurante por los ingredientes y procesos cocinando.</p>     
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="danger" name="call" slot="start"></ion-icon>
+        <ion-label color="danger">Llama a Mirano</ion-label>
+      </ion-item>
+</ion-content>

@@ -1,0 +1,143 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="light" (click)="mostrarcategoria()">
+        <ion-icon name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="light">
+      <p class="fonface">BeneficioSi</p>
+    </ion-title>
+  </ion-toolbar>
+  <div class="mostrarmenu12" id="menu1"
+    style="display: none; background: rgb(235, 78, 78, .5); border-radius: 20px; position: absolute;">
+    <ion-item class="mostrarmenu12">Gastronomia</ion-item>
+    <ion-item class="mostrarmenu12">Espectaculos</ion-item>
+    <ion-item class="mostrarmenu12">Boliches</ion-item>
+    <ion-item class="mostrarmenu12">Supermercados</ion-item>
+    <ion-item class="mostrarmenu12">Farmacias</ion-item>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div style="position: relative;">
+    <img style="max-width: 100%;" src="../../assets/imgs/hamburguesa.png" alt="">
+    <ion-buttons style="position: absolute; top: 2%; right: 1%;">
+      <ion-button style="margin-right: 76vw;" color="danger" fill="solid" shape="round">
+        <ion-icon color="light" name="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-button color="danger" fill="solid" shape="round">
+        <ion-icon color="light" name="share"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+  <ion-searchbar placeholder="Realizá tu busqueda..." inputmode="decimal" type="decimal" (ionChange)="onSearchChange($event)" [debounce]="250" showSearchButton="250"></ion-searchbar>
+  <h1 style="margin-left: 5vw;"><b>Mirano</b></h1>
+  
+  <div class="ion-padding" style="position: relative; border-top: 2px;">
+    <div style="display: inline; margin-right: 20px;">
+      <ion-icon name="star" size="small" color="danger"></ion-icon>
+      <div style="margin-top: -6vw; margin-left: 6vw;">
+      <span style="font-size: 17px; color: red;">4.4 Muy bien</span>
+      <span style="margin-left: 5px; font-size: 17px; color: rgb(83, 83, 83);">(50) · Americana · Carne</span>
+      </div>
+    </div>
+  </div>
+  <div class="ion-padding" style="position: relative; margin-top: -12vw;">
+    <div style="display: inline; margin-right: 20px;">
+      <ion-icon name="pin" size="small" style="color: rgb(83, 83, 83);"></ion-icon>
+      <div style="margin-top: -6vw; margin-left: 6vw;">
+      <span style="font-size: 17px; color: rgb(83, 83, 83);">Güise 1873</span>
+      <span style="margin-left: 5px; font-size: 17px; color: rgb(83, 83, 83);">·</span>
+      <span routerLink="/ver-mapa" style="margin-left: 5px; font-size: 17px; color: red;">Ver mapa</span>
+      </div>
+    </div>
+  </div>
+  <ion-item>
+    <ion-icon name="pricetags" style="font-size: 70px;margin-right: 5vw; color: rgb(236, 197, 69);"></ion-icon>
+    <span style="font-size: 15px; position: absolute; margin-top: -8vw; margin-left: 14vw; ">15% de descuento en toda la carta</span>
+    <div style="margin-top: 28px;">
+    <span style=" font-size: 13px; color: rgb(83, 83, 83); ">La compra minima en mirano es de 500 pesos, pero si eres jesus la comida es gratis xD 
+    </span>
+  </div>
+  </ion-item>
+
+  <ion-item>
+  <ion-thumbnail slot='start'>
+    <img class="img" src="../../assets/imgs/delivery.jpg" alt="">
+  </ion-thumbnail>
+  <ion-label>
+    <p style="font-size: 14px;">Entregar en 35 - 45 min</p>
+  </ion-label>
+  <ion-button color="light" slot="end" style="color: red;">
+  Cambiar
+</ion-button>
+  </ion-item> 
+
+  <ion-item>
+    <ion-title><b>Menú</b></ion-title>
+  </ion-item>
+
+  <div style="margin-top: 5vw; margin-left: 2vw;">    
+    <ion-label>
+      <p style="font-size: 14px;"><b>Hamburguesa mirano</b></p>
+    </ion-label>
+  </div>
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="7">
+          <ion-label>
+            <p style="font-size: 12px; "> Hamburguesa con queso chedar, un poco de chedar y para culminar un extra de chedar </p>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+  </div>
+  <div style="margin-left: 3vw; margin-top: -3vw;">
+    <ion-label>
+      <p style="font-size: 12px; "> $450 </p>
+    </ion-label>
+  </div>
+
+  <div routerLink="/show-product-delivery" style="position: absolute; margin-top: -27vw; margin-left: 60vw;">
+    <img class="img3" src="../../assets/imgs/hamburguesa.png" alt="">
+  </div>
+
+  <div style="margin-top: 5vw; margin-left: 2vw;">    
+    <ion-label>
+      <p style="font-size: 14px;"><b>Hamburguesa mirano</b></p>
+    </ion-label>
+  </div>
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="7">
+          <ion-label>
+            <p style="font-size: 12px; "> Hamburguesa con queso chedar, un poco de chedar y para culminar un extra de chedar </p>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+  </div>
+  <div style="margin-left: 3vw; margin-top: -3vw;">
+    <ion-label>
+      <p style="font-size: 12px; "> $450 </p>
+    </ion-label>
+  </div>
+
+  <div style="position: absolute; margin-top: -27vw; margin-left: 60vw;">
+    <img class="img3" src="../../assets/imgs/hamburguesa.png" alt="">
+  </div>
+     
+
+  
+
+
+
+
+
+</ion-content>

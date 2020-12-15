@@ -1,0 +1,550 @@
+<ion-header>
+
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button color="light" (click)="mostrarcategoria()">
+              <ion-icon name="menu"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+      <ion-title color="light">
+          <p routerLink="/segunda" class="fonface">BeneficioSi</p>
+      </ion-title>
+
+      <ion-icon routerLink="/map" slot="end" class="custom-icons" style="color: white;" name="globe"></ion-icon>
+      <ion-icon slot="end" class="custom-icons" style="color: white;" name="cart"></ion-icon>
+      <ion-icon slot="end" class="custom-icons" style="color: white;" name="person"></ion-icon>
+
+  </ion-toolbar>
+  <div class="mostrarmenu12" id="menu1"
+      style="display: none; background: rgb(235, 78, 78, .5); border-radius: 20px; position: absolute;">
+      <ion-item class="mostrarmenu12">Gastronomia</ion-item>
+      <ion-item class="mostrarmenu12">Espectaculos</ion-item>
+      <ion-item class="mostrarmenu12">Boliches</ion-item>
+      <ion-item class="mostrarmenu12">Supermercados</ion-item>
+      <ion-item class="mostrarmenu12">Farmacias</ion-item>
+  </div>
+
+  <ion-searchbar class="busqueda">
+
+
+  </ion-searchbar>
+
+
+</ion-header>
+
+
+<ion-content>
+  <div class="box">
+
+      <ion-button color="light" fill="clear">50%</ion-button>
+      <ion-button color="light" fill="clear">40%</ion-button>
+      <ion-button color="light" fill="clear">30%</ion-button>
+      <ion-button color="light" fill="clear">25%</ion-button>
+      <ion-button color="light" fill="clear">20%</ion-button>
+      <ion-button color="light" fill="clear">15%</ion-button>
+      <ion-button color="light" fill="clear">10%</ion-button>
+
+
+  </div>
+
+  <div class="box">
+
+      <ion-button (click)="presentfiltrosEstilo()" color="light" fill="clear">Abierto Ahora</ion-button>
+      <ion-button (click)="filtrosTarjetas = !filtrosTarjetas" color="light" fill="clear">Tarjetas</ion-button>
+      <ion-button (click)="filtrosEstilo = !filtrosEstilo" color="light" fill="clear">Estilo</ion-button>
+      <ion-button (click)="openActionSheet1()" color="light" fill="clear">Ideal Para</ion-button>
+
+
+  </div>
+  <ion-text color="danger">
+      <h1>
+          Peliculas de Comedia
+
+      </h1>
+  </ion-text>
+
+  <div class="box2">
+
+      <div routerLink="/show-cinemark" class="box-element">
+          <div class="img2">
+              <div class="ofert-chip">
+                  50%
+              </div>
+          </div>
+          <div class="box-element-description">
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label>Cinemark</ion-label>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col size="8">
+                          <ion-label>
+                              <ion-icon color="danger" name="pin"></ion-icon>
+                              Recoleta
+                          </ion-label>
+                      </ion-col>
+                      <ion-col size="4">
+                          <ion-label>
+                              8.9<ion-icon color="danger" name="star"></ion-icon>
+                          </ion-label>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </div>
+
+      </div>
+      <div class="box-element">
+          <div class="img1">
+              <div class="ofert-chip">
+                  50%
+              </div>
+          </div>
+
+          <div class="box-element-description">
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label>EspectaculoX</ion-label>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col size="8">
+                          <ion-label>
+                              <ion-icon color="danger" name="pin"></ion-icon>
+                              Recoleta
+                          </ion-label>
+                      </ion-col>
+                      <ion-col size="4">
+                          <ion-label>
+                              8.9<ion-icon color="danger" name="star"></ion-icon>
+                          </ion-label>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </div>
+
+      </div>
+      <div class="box-element">
+          <div class="img1">
+              <div class="ofert-chip">
+                  50%
+              </div>
+          </div>
+
+          <div class="box-element-description">
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label>EspectaculoX</ion-label>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col size="8">
+                          <ion-label>
+                              <ion-icon color="danger" name="pin"></ion-icon>
+                              Recoleta
+                          </ion-label>
+                      </ion-col>
+                      <ion-col size="4">
+                          <ion-label>
+                              8.9<ion-icon color="danger" name="star"></ion-icon>
+                          </ion-label>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </div>
+
+      </div>
+      <div class="box-element">
+          <div class="img1">
+              <div class="ofert-chip">
+                  50%
+              </div>
+          </div>
+          <div class="box-element-description">
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label>EspectaculoX</ion-label>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col size="8">
+                          <ion-label>
+                              <ion-icon color="danger" name="pin"></ion-icon>
+                              Recoleta
+                          </ion-label>
+                      </ion-col>
+                      <ion-col size="4">
+                          <ion-label>
+                              8.9<ion-icon color="danger" name="star"></ion-icon>
+                          </ion-label>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </div>
+
+      </div>
+
+  </div>
+
+  <ion-text color="danger">
+      <h1>
+          Stand Up
+      </h1>
+  </ion-text>
+
+  <div class="box2">
+
+      <div class="box-element">
+          <div class="img1">
+              <div class="ofert-chip">
+                  50%
+              </div>
+          </div>
+          <div class="box-element-description">
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label>EspectaculoX</ion-label>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col size="8">
+                          <ion-label>
+                              <ion-icon color="danger" name="pin"></ion-icon>
+                              Recoleta
+                          </ion-label>
+                      </ion-col>
+                      <ion-col size="4">
+                          <ion-label>
+                              8.9<ion-icon color="danger" name="star"></ion-icon>
+                          </ion-label>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </div>
+
+      </div>
+      <div class="box-element">
+          <div class="img1">
+              <div class="ofert-chip">
+                  50%
+              </div>
+          </div>
+          <div class="box-element-description">
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label>EspectaculoX</ion-label>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col size="8">
+                          <ion-label>
+                              <ion-icon color="danger" name="pin"></ion-icon>
+                              Recoleta
+                          </ion-label>
+                      </ion-col>
+                      <ion-col size="4">
+                          <ion-label>
+                              8.9<ion-icon color="danger" name="star"></ion-icon>
+                          </ion-label>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </div>
+
+      </div>
+      <div class="box-element">
+          <div class="img1">
+              <div class="ofert-chip">
+                  50%
+              </div>
+          </div>
+          <div class="box-element-description">
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label>EspectaculoX</ion-label>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col size="8">
+                          <ion-label>
+                              <ion-icon color="danger" name="pin"></ion-icon>
+                              Recoleta
+                          </ion-label>
+                      </ion-col>
+                      <ion-col size="4">
+                          <ion-label>
+                              8.9<ion-icon color="danger" name="star"></ion-icon>
+                          </ion-label>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </div>
+
+      </div>
+      <div class="box-element">
+          <div class="img1">
+              <div class="ofert-chip">
+                  50%
+              </div>
+          </div>
+          <div class="box-element-description">
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label>EspectaculoX</ion-label>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col size="8">
+                          <ion-label>
+                              <ion-icon color="danger" name="pin"></ion-icon>
+                              Recoleta
+                          </ion-label>
+                      </ion-col>
+                      <ion-col size="4">
+                          <ion-label>
+                              8.9<ion-icon color="danger" name="star"></ion-icon>
+                          </ion-label>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </div>
+
+      </div>
+
+  </div>
+
+  <ion-text color="danger">
+      <h1>
+          Teatro
+
+      </h1>
+  </ion-text>
+
+  <div class="box2">
+
+      <div class="box-element">
+          <div class="img1">
+              <div class="ofert-chip">
+                  50%
+              </div>
+          </div>
+          <div class="box-element-description">
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label>EspectaculoX</ion-label>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col size="8">
+                          <ion-label>
+                              <ion-icon color="danger" name="pin"></ion-icon>
+                              Recoleta
+                          </ion-label>
+                      </ion-col>
+                      <ion-col size="4">
+                          <ion-label>
+                              8.9<ion-icon color="danger" name="star"></ion-icon>
+                          </ion-label>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </div>
+
+      </div>
+      <div class="box-element">
+          <div class="img1">
+              <div class="ofert-chip">
+                  50%
+              </div>
+          </div>
+          <div class="box-element-description">
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label>EspectaculoX</ion-label>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col size="8">
+                          <ion-label>
+                              <ion-icon color="danger" name="pin"></ion-icon>
+                              Recoleta
+                          </ion-label>
+                      </ion-col>
+                      <ion-col size="4">
+                          <ion-label>
+                              8.9<ion-icon color="danger" name="star"></ion-icon>
+                          </ion-label>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </div>
+
+      </div>
+      <div class="box-element">
+          <div class="img1">
+              <div class="ofert-chip">
+                  50%
+              </div>
+          </div>
+          <div class="box-element-description">
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label>EspectaculoX</ion-label>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col size="8">
+                          <ion-label>
+                              <ion-icon color="danger" name="pin"></ion-icon>
+                              Recoleta
+                          </ion-label>
+                      </ion-col>
+                      <ion-col size="4">
+                          <ion-label>
+                              8.9<ion-icon color="danger" name="star"></ion-icon>
+                          </ion-label>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </div>
+
+      </div>
+      <div class="box-element">
+          <div class="img1">
+              <div class="ofert-chip">
+                  50%
+              </div>
+          </div>
+          <div class="box-element-description">
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label>EspectaculoX</ion-label>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col size="8">
+                          <ion-label>
+                              <ion-icon color="danger" name="pin"></ion-icon>
+                              Recoleta
+                          </ion-label>
+                      </ion-col>
+                      <ion-col size="4">
+                          <ion-label>
+                              8.9<ion-icon color="danger" name="star"></ion-icon>
+                          </ion-label>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </div>
+
+      </div>
+
+  </div>
+
+  <div class="contenido ion-padding">
+
+
+      <br>
+      <br>
+      <ion-button color="purple" Expand="full" routerLink="/home">
+
+      </ion-button>
+
+
+
+
+      <div style="position: absolute; top: 50vh; transform: translate(-50%, -50%); left: 50vw;">
+          <ion-text color="light">
+              <h1 class="fontface"></h1>
+          </ion-text>
+      </div>
+
+      <div style="bottom: 10vh; position: absolute; left: 50vw; transform: translateX(-50%);" class="ion-text-center">
+          <ion-button color="light" fill="clear" (click)="ingresar(usuario)"></ion-button>
+          <br>
+          <ion-button color="light" fill="clear">
+              <br>
+              <ion-icon name="comida"></ion-icon>
+          </ion-button>
+          <ion-button color="purple" Expand="full" routerLink="/home">
+
+          </ion-button>
+
+      </div>
+  </div>
+
+
+
+
+
+</ion-content>
+
+<!--Filtro de Estilo-->
+<div *ngIf="filtrosEstilo" class="filtrosEstilo">
+
+
+  <div style="border-radius: 15px;" class="filtros">
+      <div class="ion-text-center">
+          <ion-icon color="danger" (click)="filtrosEstilo = !filtrosEstilo" size=large name="arrow-dropdown">
+          </ion-icon>
+      </div>
+      <h1 class="ion-text-center">Estilo</h1>
+      <div *ngFor="let item of filtros">
+          <ion-button expand="full" class="dropdown" (click)="item.mostrar = !item.mostrar">
+              <h6> {{item.titulo}} </h6>
+          </ion-button>
+          <div *ngIf="item.mostrar">
+              <div class="subcategorias" *ngFor="let item2 of item.filtros">
+                  <ion-item>
+                      <ion-toggle color="success" slot="start"></ion-toggle>
+                      {{item2.nombre}}
+                  </ion-item>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!--Filtros de Tarjetas-->
+<div *ngIf="filtrosTarjetas" class="filtrosTarjetas">
+  <div style="border-radius: 15px;" class="filtros">
+      <div class="ion-text-center">
+          <ion-button fill="clear" color="danger" (click)="filtrosTarjetas = !filtrosTarjetas">
+              <ion-icon color="danger" size=large name="arrow-dropdown"></ion-icon>
+          </ion-button>
+      </div>
+      <h1 class="ion-text-center">Tarjetas</h1>
+      <div *ngFor="let item of filtrostarjetas">
+          <ion-button expand="full" class="dropdown" (click)="item.Tarjetas = !item.Tarjetas">
+              <h6> {{item.titulo}} </h6>
+          </ion-button>
+          <div *ngIf="item.Tarjetas">
+              <div class="subcategorias" *ngFor="let item2 of item.filtros">
+                  <ion-item (click)="item2.showchildren = !item2.showchildren">
+                      {{item2.nombre}}
+                      <ion-toggle *ngIf="item.toggle"></ion-toggle>
+                  </ion-item>
+                  <div *ngIf="item2.showchildren">
+                      <div *ngFor="let item3 of item2.children">
+                          <div style="padding-left: 10vw">
+                             <ion-item>  {{item3.cardName}}  <ion-toggle color="success" slot="end"></ion-toggle>  </ion-item>                             
+                          </div>
+                      </div>
+                  </div>                      
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button color="light" (click)="mostrarcategoria()">
+              <ion-icon name="menu"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+
+      <ion-title color="light">
+          <p routerLink="/segunda" class="fonface">BeneficioSi</p>
+      </ion-title>
+
+      <ion-icon routerLink="/map" slot="end" class="custom-icons" style="color: white;" name="globe"></ion-icon>
+      <ion-icon slot="end" class="custom-icons" style="color: white;" name="cart"></ion-icon>
+      <ion-icon slot="end" class="custom-icons" style="color: white;" name="person"></ion-icon>
+
+  </ion-toolbar>
+  <ion-searchbar (ionInput)="filtrarPorSearchBar($event)" class="busqueda">
+
+
+  </ion-searchbar>
+  <div class="box"> 
+      <ion-button color="light" fill="clear" (click)="initializeItems()">Eliminar filtros</ion-button>     
+      <ion-button *ngFor="let filtro of filtros" (click)="filtrar(filtro.nombre)" color="light" fill="clear">{{filtro.nombre}}</ion-button>        
+  </div>
+</ion-header>
+
+<ion-content style="--background: rgb(236, 236, 236);">
+  
+ 
+
+    <ion-grid>
+    <ion-row>
+      <ion-col style="padding: 10px;" *ngFor="let producto of productosFiltrados" size="6">
+        <div routerLink="/hamburguesamc">
+          <img style="width: 137px; height: 85px; border-radius: 3px;" src="{{producto.imagen}}" alt="">          
+        </div>
+        <p style="margin-top: 10px;"><ion-text color="dark"><b>$ {{producto.precio}}</b></ion-text></p>
+        <p style="margin-top: -3vw; font-size:12px; ">{{producto.descripcion}}</p>
+        <ion-button size="small" (click)="agregarProducto(producto)" style="font-weight: bold; text-transform: capitalize; margin-top: -1vw;" color="danger">
+          <span style="color: white;">agregar</span>
+        </ion-button>
+      </ion-col>     
+    </ion-row>
+  </ion-grid>
+
+  <ion-item routerLink="/canasta" color="danger" style="position: fixed; bottom: 11px; width: 100%; left: 0; border-radius: 25px;">
+    <ion-button color="danger" slot="start">
+      <span color="light">{{contadorItems | async}}</span>
+    </ion-button>
+    <ion-label class="ion-text-center" style="margin-left: 25px;">Añadir a la cesta</ion-label>
+    <ion-label class="ion-text-right" style="margin-left: -80px;">$ {{subtotal.value}}</ion-label>
+
+
+  </ion-item>
+  
+  <div>
+    <h1></h1>
+  </div>
+  <div style="margin-top: 15vw;">
+    <h1></h1>
+  </div>
+
+
+
+
+
+
+</ion-content>

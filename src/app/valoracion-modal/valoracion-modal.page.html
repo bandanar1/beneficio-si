@@ -1,0 +1,58 @@
+<ion-header style="padding: 15px 25px 25px 25px;" class="color_primario2 ion-activatable ripple-parent"
+  (click)="closeModal()">
+  <ion-label color="light">
+    toque para cerrar
+    <ion-icon name="caret-down-outline" slot="end"></ion-icon>
+  </ion-label>
+  <ion-ripple-effect></ion-ripple-effect>
+  <div class="div-custom"></div>
+</ion-header>
+<ion-content>
+  
+  <br>
+  <br>
+  
+  <div style="display: flex; justify-content: space-evenly;">    
+    <div class="ion-text-center">
+      <ion-button routerLink="/segunda" (click)="closeModal()" color="danger" size="large" class="boton-redondo" fill="solid" (click)="cerrarMapa()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+      <br>
+      <ion-label color="medium">Cerrar Mapa</ion-label>
+    </div>
+
+    <div class="ion-text-center">
+      <ion-button color="tertiary" size="large" class="boton-redondo" fill="solid" (click)="meLocation()">      
+        <ion-icon name="pin"></ion-icon>
+      </ion-button>
+      <br>
+      <ion-label color="medium">Mí Ubicación</ion-label>
+    </div>
+
+    <div class="ion-text-center">
+      <ion-button color="secondary" size="large" class="boton-redondo" fill="solid" (click)="playSound()">
+        <ion-icon slot="icon-only" name="star"></ion-icon>
+      </ion-button>
+      <br>
+      <ion-label color="medium">Buscar</ion-label>
+    </div>
+
+    <div class="ion-text-center">
+      <ion-button color="warning" size="large" class="boton-redondo" fill="solid" (click)="playSound()">
+        <ion-icon slot="icon-only" name="map" color="light"></ion-icon>
+      </ion-button>
+      <br>
+      <ion-label color="medium">Cambiar Mapa</ion-label>
+    </div>    
+  </div>
+
+  <br>
+
+  <h3 class="ion-text-center">Valoracion</h3>
+  
+  <ion-item lines="none">
+    <ion-label class="ion-text-center" position="floating">{{valoracion.lower}} - {{valoracion.upper}}</ion-label>
+    <ion-range color="danger" dualKnobs="true" min="0" max="5" pin="true"
+      [(ngModel)]="valoracion" snaps="true" step="1" ticks="true"></ion-range>
+  </ion-item>
+</ion-content>

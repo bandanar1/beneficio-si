@@ -1,0 +1,88 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+.alertModal{
+    padding: 125% 0% 0 0% !important;
+    .modal-wrapper{
+        border-radius: 30px 30px 0px 0px;
+    }
+}
+
+.b-transparent{
+    --background: transparent;
+    background: transparent;
+}
+
+.map-options-modal{
+    padding: 110% 0% 0 0% !important;
+    .modal-wrapper {
+        border-radius: 25px 25px 0px 0px;
+    }   
+}
+
+
+.color_primario2 {
+    background: linear-gradient(to left, var(--ion-color-danger), var(--ion-color-secondary));
+}
+
+.customMarker {
+    position: absolute;
+    cursor: pointer;
+    background: transparent;
+    width: 80px;
+    height: 80px;
+    /* -width/2 */
+    margin-left: -40px;
+    
+    /* -height + arrow */
+    margin-top: -88px;
+    border-radius: 100%;
+    padding: 0px;
+}
+
+.img-iconxD {
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.4);
+    width: 70px;
+    height: 70px;
+    margin: 4px;
+    border-radius: 100%;
+}
+
+.img-iconxD2{
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -3px;
+    left: 28.5px;
+}
+
+
+.color_primario2 {
+    background: linear-gradient(to left, var(--ion-color-danger), var(--ion-color-danger));
+}

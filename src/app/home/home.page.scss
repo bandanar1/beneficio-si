@@ -1,0 +1,52 @@
+.contenido{
+    position: relative;
+    min-height: 100vh;        
+    background: url(../../assets/imgs/home1.jpg);
+    background-size: 200% 100%;
+    min-height: 100vh;
+}
+
+.fontface{
+    font-family: 'Alex Brush', cursive;    
+}
+
+.sombra{
+    background: rgba(0, 0, 0, .5);
+    min-height: 100vh;
+    position: relative;
+}
+.div-margin{
+    margin-bottom: 6vh; 
+    margin-top: 5vh;
+}
+
+ion-item{
+    --background: transparent;
+ }
+
+
+ ion-label{
+     --background: white; }
+
+ion-input{
+     --background: transparent; }
+
+     ion-select{ color: white;}
+
+     .registrate{
+
+        --background: white;
+
+     }
+
+.button-custom{
+    --background: rgb(0, 0, 0, .3);
+}
+
+.padre_de_botones{
+    padding: 0 10vw;
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+
+}

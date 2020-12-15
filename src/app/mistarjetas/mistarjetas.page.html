@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button color="light" (click)="mostrarcategoria()">
+                <ion-icon name="menu"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title color="light">
+            <p routerLink="/segunda" class="fonface">BeneficioSi</p>
+        </ion-title>
+
+        <ion-icon routerLink="/map" slot="end" class="custom-icons" style="color: white;" name="globe"></ion-icon>
+        <ion-icon slot="end" class="custom-icons" style="color: white;" name="cart"></ion-icon>
+        <ion-icon slot="end" class="custom-icons" style="color: white;" name="person"></ion-icon>
+
+    </ion-toolbar>
+    <div class="mostrarmenu12" id="menu1"
+        style="display: none; background: rgb(235, 78, 78, .5); border-radius: 20px; position: absolute;">
+        <ion-item class="mostrarmenu12">Gastronomia</ion-item>
+        <ion-item class="mostrarmenu12">Espectaculos</ion-item>
+        <ion-item class="mostrarmenu12">Boliches</ion-item>
+        <ion-item class="mostrarmenu12">Supermercados</ion-item>
+        <ion-item class="mostrarmenu12">Farmacias</ion-item>
+    </div>
+</ion-header>
+<ion-content style="--background: white">
+    
+    <ion-item color="danger">
+        <div class="ion-text-center">
+            <h1  style="color: white;">Mis Tarjetas </h1>
+        </div>
+    </ion-item>
+    <ion-slides #slidesBanck [options]="slideOpts">
+        <ion-slide *ngFor="let item of banckCard">
+            <ion-item color="light">
+                <ion-button color="medium" slot="start" fill="clear" (click)="pagerPrev()">
+                    <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+                </ion-button>                
+                <h1><ion-text color="medium">{{item.nombre}}</ion-text></h1>
+                <ion-button color="medium" slot="end" fill="clear" (click)="pagerNext()">
+                    <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+                </ion-button>                
+            </ion-item>
+            <ion-item *ngFor="let item2 of item.children" color="danger">            
+            
+                <ion-text color="light">{{item2.cardName}}</ion-text> 
+                <ion-toggle slot="end" color="success"></ion-toggle>    
+                <ion-icon slot="start" name="card"></ion-icon>           
+            
+            </ion-item>
+        </ion-slide>
+    </ion-slides>
+
+</ion-content>

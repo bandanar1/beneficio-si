@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="bottom">
+            <ion-button color="light" (click)="mostrarcategoria()">
+                <ion-icon name="menu"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title color="light">
+            <p routerLink="/segunda" class="fonface"> <ion-text position="absolute"> Notificaciones</ion-text> </p>
+        </ion-title>
+        
+       
+       <ion-icon slot="end" class="custom-icons" style="color: white;" name="notifications"></ion-icon>
+       <ion-icon slot="start" class="custom-icons" style="color: white;" name="arrow-round-back"></ion-icon>
+    </ion-toolbar>
+    <div class="mostrarmenu12" id="menu1"
+        style="display: none; background: rgb(235, 78, 78, .5); border-radius: 20px; position: absolute;">
+        <ion-item class="mostrarmenu12">Gastronomia</ion-item>
+        <ion-item class="mostrarmenu12">Espectaculos</ion-item>
+        <ion-item class="mostrarmenu12">Boliches</ion-item>
+        <ion-item class="mostrarmenu12">Supermercados</ion-item>
+        <ion-item class="mostrarmenu12">Farmacias</ion-item>
+    </div>
+  </ion-header>
+  <ion-content>
+  <ion-item><ion-icon name="checkmark-circle-outline"></ion-icon> <ion-label> Su pedido fue enviado </ion-label></ion-item>
+  <ion-item><ion-icon name="clipboard"></ion-icon><ion-label> Mirano<h3> Hay nuevos productos en Mirano</h3> </ion-label></ion-item>
+  <ion-item><ion-icon name="pricetag"></ion-icon><ion-label> Has recibido un Cupón de Descuento </ion-label></ion-item>
+  <ion-item><ion-icon name="wallet"></ion-icon><ion-label> Has Recibido BenePuntos</ion-label></ion-item>
+  </ion-content>

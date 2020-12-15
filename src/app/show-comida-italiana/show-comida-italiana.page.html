@@ -1,0 +1,267 @@
+<ion-header>
+  
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-button color="light" (click)="mostrarcategoria()"><ion-icon name="menu"></ion-icon></ion-button>
+    </ion-buttons> 
+    <ion-title routerLink="/segunda" color="light"><p class="fonface">BeneficioSi</p></ion-title> 
+  </ion-toolbar>
+  <div class="mostrarmenu12" id="menu1" style="display: none; background: rgb(235, 78, 78, .5); border-radius: 20px; position: absolute;">
+    <ion-item class="mostrarmenu12">Gastronomia</ion-item>
+    <ion-item class="mostrarmenu12">Espectaculos</ion-item>
+    <ion-item class="mostrarmenu12">Boliches</ion-item>
+    <ion-item class="mostrarmenu12">Supermercados</ion-item>
+    <ion-item class="mostrarmenu12">Farmacias</ion-item>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div style="position: relative;">
+    <img style="max-width: 100%;" src="../../assets/imgs/comida-italiana.png" alt="">
+    
+  </div>
+  <div style=" position: relative;">
+    <div style=" margin-right: 20px;">
+      <img class="img" src="../../assets/imgs/pizza.png" alt="">
+
+      <span style="font-size: 23px; position: absolute; margin-top: 9px; margin-left: 10px;">Pizza</span>
+        <span style="font-size: 14px; position: absolute; margin-top: 26px; margin-left: 10px;"><p> Gastronomia</p></span>
+          <span style="font-size: 14px; position: absolute; margin-top: 26px; margin-left: 100px;"><p> Palermo</p></span>
+            <span style="font-size: 14px; position: absolute; margin-top: 59px; margin-left: 106px;">
+              <ion-icon name="pin" size="large"></ion-icon>
+             </span>
+             <span style="font-size: 16px; position: absolute; margin-top: 59px; margin-left: 19px;">
+              <img class="img2" src="../../assets/imgs/logo-gastronomia.png" alt="">
+             </span>
+      
+
+        <ion-grid>
+          <ion-row size="6">
+            <ion-col>
+              <ion-buttons style="position: absolute; bottom: 14vw; right: -7%;">
+                <ion-button style="--border-radius: 5px; box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);" color="danger" fill="solid" size="small" >
+                  <p>7.5</p>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+          <ion-row size="8">
+            <ion-col>
+              <ion-buttons  style="position: absolute; bottom: 4vw; right: -7%;">
+                <ion-button style="--border-radius: 5px; box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);" color="danger" fill="solid" >
+                  <h3>20%</h3>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    
+      <span style="position: absolute; right: 0; top: 0;">
+       
+      </span>
+    </div>
+  </div>
+
+  <!--Filtros de el mercado-->
+  <div class="subcategorias" style="position: relative; border-bottom: 2px solid red; margin-top: -13px;">
+  </div>
+  <div style=" position: relative;">
+    <div style=" margin-right: 20px;">
+      <img style="margin-top: 10px;" class="img" src="../../assets/imgs/lasagna.png" alt="">
+
+      <span style="font-size: 23px; position: absolute; margin-top: 9px; margin-left: 10px;">Lasagna</span>
+        <span style="font-size: 14px; position: absolute; margin-top: 26px; margin-left: 10px;"><p> Gastronomia</p></span>
+          <span style="font-size: 14px; position: absolute; margin-top: 26px; margin-left: 100px;"><p> Catedral</p></span>
+            <span style="font-size: 14px; position: absolute; margin-top: 59px; margin-left: 106px;">
+              <ion-icon name="pin" size="large"></ion-icon>
+             </span>
+             <span style="font-size: 16px; position: absolute; margin-top: 59px; margin-left: 19px;">
+              <img class="img2" src="../../assets/imgs/logo-gastronomia.png" alt="">
+             </span>
+      
+
+        <ion-grid>
+          <ion-row size="6">
+            <ion-col>
+              <ion-buttons style="position: absolute; bottom: 16vw; right: -7%;">
+                <ion-button style="--border-radius: 5px; box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);" color="danger" fill="solid" size="small" >
+                  <p>4.5</p>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+          <ion-row size="8">
+            <ion-col>
+              <ion-buttons  style="position: absolute; bottom: 6vw; right: -7%;">
+                <ion-button style="--border-radius: 5px; box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);" color="danger" fill="solid" >
+                  <h3>40%</h3>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    
+      <span style="position: absolute; right: 0; top: 0;">
+       
+      </span>
+    </div>
+  </div>
+    
+  <div class="subcategorias" style="position: relative; border-bottom: 2px solid red; margin-top: -13px;">
+  </div>
+  <div style=" position: relative;">
+    <div style=" margin-right: 20px;">
+      <img style="margin-top: 10px;" class="img" src="../../assets/imgs/tilo.png" alt="">
+
+      <span style="font-size: 23px; position: absolute; margin-top: 9px; margin-left: 10px;">Tilo</span>
+        <span style="font-size: 14px; position: absolute; margin-top: 26px; margin-left: 10px;"><p> Gastronomia</p></span>
+          <span style="font-size: 14px; position: absolute; margin-top: 26px; margin-left: 100px;"><p> Agüero</p></span>
+            <span style="font-size: 14px; position: absolute; margin-top: 59px; margin-left: 106px;">
+              <ion-icon name="pin" size="large"></ion-icon>
+             </span>
+             <span style="font-size: 16px; position: absolute; margin-top: 59px; margin-left: 19px;">
+              <img class="img2" src="../../assets/imgs/logo-gastronomia.png" alt="">
+             </span>
+      
+
+        <ion-grid>
+          <ion-row size="6">
+            <ion-col>
+              <ion-buttons style="position: absolute; bottom: 16vw; right: -7%;">
+                <ion-button style="--border-radius: 5px; box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);" color="danger" fill="solid" size="small" >
+                  <p>9.5</p>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+          <ion-row size="8">
+            <ion-col>
+              <ion-buttons  style="position: absolute; bottom: 6vw; right: -7%;">
+                <ion-button style="--border-radius: 5px; box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);" color="danger" fill="solid" >
+                  <h3>50%</h3>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    
+      <span style="position: absolute; right: 0; top: 0;">
+       
+      </span>
+    </div>
+  </div>
+
+  <!--Filtros de el mercado-->
+  <div class="subcategorias" style="position: relative; border-bottom: 2px solid red; margin-top: -13px;">
+  </div>
+  <div style=" position: relative;">
+    <div style=" margin-right: 20px;">
+      <img style="margin-top: 10px;" class="img" src="../../assets/imgs/carbonara.png" alt="">
+
+      <span style="font-size: 23px; position: absolute; margin-top: 9px; margin-left: 10px;">Carbonara</span>
+        <span style="font-size: 14px; position: absolute; margin-top: 26px; margin-left: 10px;"><p>Gastronomia</p></span>
+          <span style="font-size: 14px; position: absolute; margin-top: 26px; margin-left: 100px;"><p> Juramento</p></span>
+            <span style="font-size: 14px; position: absolute; margin-top: 59px; margin-left: 106px;">
+              <ion-icon name="pin" size="large"></ion-icon>
+             </span>
+             <span style="font-size: 16px; position: absolute; margin-top: 59px; margin-left: 19px;">
+              <img class="img2" src="../../assets/imgs/logo-gastronomia.png" alt="">
+             </span>
+      
+
+        <ion-grid>
+          <ion-row size="6">
+            <ion-col>
+              <ion-buttons style="position: absolute; bottom: 16vw; right: -7%;">
+                <ion-button style="--border-radius: 5px; box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);" color="danger" fill="solid" size="small" >
+                  <p>3.5</p>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+          <ion-row size="8">
+            <ion-col>
+              <ion-buttons  style="position: absolute; bottom: 6vw; right: -7%;">
+                <ion-button style="--border-radius: 5px; box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);" color="danger" fill="solid" >
+                  <h3>10%</h3>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    
+      <span style="position: absolute; right: 0; top: 0;">
+       
+      </span>
+    </div>
+  </div>
+
+  <div class="subcategorias" style="position: relative; border-bottom: 2px solid red; margin-top: -13px;">
+  </div>
+  <div style=" position: relative;">
+    <div style=" margin-right: 20px;">
+      <img style="margin-top: 10px;" class="img" src="../../assets/imgs/ravioles.png" alt="">
+
+      <span style="font-size: 23px; position: absolute; margin-top: 9px; margin-left: 10px;">Ravioles</span>
+        <span style="font-size: 14px; position: absolute; margin-top: 26px; margin-left: 10px;"><p> Gastronomia</p></span>
+          <span style="font-size: 14px; position: absolute; margin-top: 26px; margin-left: 100px;"><p> Palermo</p></span>
+            <span style="font-size: 14px; position: absolute; margin-top: 59px; margin-left: 106px;">
+              <ion-icon name="pin" size="large"></ion-icon>
+             </span>
+             <span style="font-size: 16px; position: absolute; margin-top: 59px; margin-left: 19px;">
+              <img class="img2" src="../../assets/imgs/logo-gastronomia.png" alt="">
+             </span>
+      
+
+        <ion-grid>
+          <ion-row size="6">
+            <ion-col>
+              <ion-buttons style="position: absolute; bottom: 16vw; right: -7%;">
+                <ion-button style="--border-radius: 5px; box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);" color="danger" fill="solid" size="small" >
+                  <p>7.5</p>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+          <ion-row size="8">
+            <ion-col>
+              <ion-buttons  style="position: absolute; bottom: 6vw; right: -7%;">
+                <ion-button style="--border-radius: 5px; box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);" color="danger" fill="solid" >
+                  <h3>20%</h3>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    
+      <span style="position: absolute; right: 0; top: 0;">
+       
+      </span>
+    </div>
+  </div>
+
+  
+  
+
+
+
+  
+
+
+
+</ion-content>

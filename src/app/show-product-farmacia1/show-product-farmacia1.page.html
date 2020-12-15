@@ -1,0 +1,239 @@
+<ion-header>
+  
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-button color="light" (click)="mostrarcategoria()"><ion-icon name="menu"></ion-icon></ion-button>
+    </ion-buttons> 
+    <ion-title color="light"><p class="fonface">BeneficioSi</p></ion-title>
+  </ion-toolbar>
+  <div class="mostrarmenu12" id="menu1" style="display: none; background: rgb(235, 78, 78, .5); border-radius: 20px; position: absolute;">
+    <ion-item class="mostrarmenu12">Gastronomia</ion-item>
+    <ion-item class="mostrarmenu12">Espectaculos</ion-item>
+    <ion-item class="mostrarmenu12">Boliches</ion-item>
+    <ion-item class="mostrarmenu12">Supermercados</ion-item>
+    <ion-item class="mostrarmenu12">Farmacias</ion-item>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div style="position: relative;">
+    <img style="width: 100%; height: 33vh;" src="../../assets/imgs/loratadina.png" alt="">
+    <ion-buttons style="position: absolute; top: 2%; right: 1%;">
+      <ion-button color="danger" fill="solid" shape="round">
+        <ion-icon color="light" name="heart"></ion-icon>
+      </ion-button>
+      <ion-button color="danger" fill="solid" shape="round">
+        <ion-icon color="light" name="share"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h3 style="position: absolute; right: 1%; bottom: 0; color: red">Loratadina</h3>
+  </div>
+  <div>
+    aqui van las imagenes de las ofertas.
+  </div>
+  <h1>Otras Ofertas</h1>
+  <div class="ion-padding" style=" position: relative; border-top: 2px solid red;;">
+    <div style="display: inline; margin-right: 20px;">
+      <ion-icon style="font-size: 30px;" name="star" color="danger"></ion-icon>
+      <ion-icon style="font-size: 30px;" name="star" color="danger"></ion-icon>
+      <ion-icon style="font-size: 30px;" name="star" color="danger"></ion-icon>
+      <ion-icon style="font-size: 30px;" name="star-outline" color="danger"></ion-icon>
+      <ion-icon style="font-size: 30px;" name="star-outline" color="danger"></ion-icon>
+  
+      <span style="font-size: 20px;">486</span>
+  
+      <ion-icon style="font-size: 30px;" name="person" color="danger"></ion-icon>
+      <span style="position: absolute; right: 0; top: 0;">
+        <ion-text color="danger">
+          587 OPCIONES
+        </ion-text>
+      </span>
+    </div>
+  </div>
+
+ 
+
+
+  <!--Dias disponibles de la pelicula-->
+  <div class="ion-padding" style="margin-bottom: 5px; position: relative; border-top: 2px solid red; border-bottom: 2px solid red;">
+    <ion-button color="danger" shape="round" size="small">
+      <div>
+        <ion-label>Lun</ion-label>
+        <div>
+         <ion-label>19:30</ion-label>
+        </div>
+      </div>
+    </ion-button>
+
+    <ion-button color="danger" shape="round" size="small">
+      <div>
+        <ion-label>Mar</ion-label>
+        <div>
+         <ion-label>19:30</ion-label>
+        </div>
+      </div>
+    </ion-button>
+
+    <ion-button color="danger" shape="round" size="small">
+      <div>
+        <ion-label>Mie</ion-label>
+        <div>
+         <ion-label>19:30</ion-label>
+        </div>
+      </div>
+    </ion-button>
+
+    <ion-button color="danger" shape="round" size="small">
+      <div>
+        <ion-label>Ju</ion-label>
+        <div>
+         <ion-label>19:30</ion-label>
+        </div>
+      </div>
+    </ion-button>
+
+    <ion-button color="danger" shape="round" size="small">
+      <div>
+        <ion-label>Vie</ion-label>
+        <div>
+         <ion-label>19:30</ion-label>
+        </div>
+      </div>
+    </ion-button>
+  </div>
+   <!--DESCUENTOS1-->
+   <ion-item class="subcategorias" style="position: relative; border-bottom: 2px solid red;">
+    <h5 style="color: red;">Farmacity</h5> 
+         <ion-icon style="margin-left: 70px;" name="pin" color="danger"></ion-icon>
+         <ion-label color="danger">1.3km</ion-label>
+      <h1 slot="end" style="color:red;">$90</h1>
+   </ion-item>
+
+    <!--DESCUENTOS2-->
+  <ion-item class="subcategorias" style="position: relative; border-bottom: 2px solid red;">
+    <h5 style="color: red;">Farmacia Azul</h5> 
+      <ion-icon style="margin-left: 38px;" name="pin" color="danger"></ion-icon>
+        <ion-label color="danger">1.3km</ion-label>
+          <h1 slot="end" style="color:red;">$95</h1>
+   </ion-item>
+
+    <!--DESCUENTOS3-->
+  <ion-item class="subcategorias" style="position: relative; border-bottom: 2px solid red;">
+    <h5 slot="start" style="color: red;">Dr. Ahorro</h5> 
+    <ion-icon style="margin-left: 40px;" name="pin" color="danger"></ion-icon>
+      <ion-label color="danger">1.3km</ion-label>    
+      <h1 slot="end" style="color:red;">$80</h1>
+   </ion-item>
+
+   <!--DESCUENTOS4-->
+  <ion-item color="danger" class="subcategorias1" style="position: relative; border-bottom: 2px solid red;">
+    <h5 style="color: white;">Farmaliv</h5>
+    <ion-icon style="margin-left: 85px;" name="pin" color="light"></ion-icon>
+      <ion-label color="light">1.3km</ion-label>  
+      <h1 slot="end" style="color: white;">$75</h1>
+   </ion-item>
+
+   <!--PERFIl-->
+   <div class="ion-padding" style=" position: relative; border-top: 2px solid red;;">
+    <div style="display: inline; margin-right: 20px;">
+      <ion-icon style="font-size: 30px;" name="star" color="danger"></ion-icon>
+      <ion-icon style="font-size: 30px;" name="star" color="danger"></ion-icon>
+      <ion-icon style="font-size: 30px;" name="star" color="danger"></ion-icon>
+      <ion-icon style="font-size: 30px;" name="star-outline" color="danger"></ion-icon>
+      <ion-icon style="font-size: 30px;" name="star-outline" color="danger"></ion-icon>
+
+      <span style="font-size: 20px;">486</span>
+      <ion-icon style="font-size: 30px;" name="person" color="danger"></ion-icon>
+      <span style="position: absolute; right: 0; top: 16px;">
+        <ion-button color="danger" shape="round" size="small">
+          <div>
+            <ion-label>--PERFIl--</ion-label>
+          </div>
+        </ion-button>
+      </span>
+    </div>
+  </div>
+
+ 
+  <!--Seccion de Direccion-->
+  <div class="ion-padding" style="position: relative;border-bottom: 2px solid red;">
+    <ion-icon color="danger" name="pin" size="large"></ion-icon>
+    <ion-label color="danger">A 1Km de tu Ubicación Actual</ion-label>
+    <div>
+      <ion-label style="margin-left: 9vw;">Guise 1873</ion-label>
+    </div>
+    <!--google maps-->
+    <div #googlemaps id="googlemaps">
+
+    </div>
+  </div>
+
+  <!--Informacion de contacto de la empresa-->
+  <div class="ion-padding" style="position: relative; border-bottom: 2px solid red;">
+    <ion-icon size="large" name="call"></ion-icon>
+    <ion-title style="margin-left: 8vw; margin-top: -7vw;" color="danger">Contacto</ion-title>
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-row style="margin-right: 10vw;">
+              <ion-col>
+                <ion-icon size="large" name="logo-whatsapp"></ion-icon>
+                <ion-label>
+                  +5491123916734
+                </ion-label>
+              </ion-col>
+              <ion-col>
+                <ion-icon size="large" name="logo-instagram"></ion-icon>
+                <ion-label>
+                  @Bandanar18
+                </ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-row style="margin-right: 10vw;">
+              <ion-col>
+                <ion-icon size="large" name="logo-facebook"></ion-icon>
+                <ion-label>
+                  Jesus Vicuña
+                </ion-label>
+              </ion-col>
+              <ion-col>
+                <ion-icon size="large" name="logo-twitter"></ion-icon>
+                <ion-label>
+                  @JesusLP_
+                </ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <!--seccion de Tambien te pueden interesar-->
+  <div class="ion-padding" style="position: relative; border-bottom: 2px solid red;">
+    <ion-title color="danger">
+      Tambien te puede interesar
+    </ion-title>
+    <img class="img" src="../../assets/imgs/loratadina.png" alt="">
+    <img class="img" src="../../assets/imgs/femmex.png" alt="">
+    <img class="img" src="../../assets/imgs/plenitud.png" alt="">
+    <div style="background: rgba(119, 58, 58, 0.5);" class="tituloimage"></div>
+  </div>
+
+ 
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,66 @@
+ion-toolbar {
+    --background: linear-gradient(#ea615f, #bd1232);
+  
+  }
+  
+  #googlemaps {
+    height: 30vh;
+    width: 100%;
+  }
+  
+  .img {
+    height: 38px;
+    width: 44px;
+  
+  }
+  
+  .filtros {
+    max-height: 60vh;
+    width: 100%;
+    background: white;
+    margin-bottom: 0;
+    bottom: 0;
+    overflow-y: scroll;
+  }
+  
+  .dropdown {
+    margin: 0;  
+    font-weight: bold;
+    color: white;
+    --background: linear-gradient(#fe8573, #bb0d30);
+  
+  }
+  
+  .filtrosEstilo {
+  
+    background: rgba(0, 0, 0, .3);
+  
+    z-index: 9999999999;
+  }
+  
+  .subcategoria {
+  
+    height: 100%;
+    width: 100%;
+  }
+
+
+    .img1 {
+        height: 50px;
+        width: 105px;
+        
+
+    }
+
+    .img2 {
+      height: 75px;
+      width: 105px;
+      border-radius: 2px;
+
+  }
+
+  .img3 {
+    height: 80px;
+    width: 112px;
+    border-radius: 4px;
+  }

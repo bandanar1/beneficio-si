@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="light">
+      <p routerLink="/segunda" class="fonface">BeneficioSi</p>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/map">
+        <ion-icon style="color: white;" name="globe"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon style="color: white;" name="cart"></ion-icon>
+        <ion-badge color="light">{{contadorItems | async}}</ion-badge>
+      </ion-button>
+      <ion-button>
+        <ion-icon style="color: white;" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-icon color="medium" slot="start" name="apps"></ion-icon> 
+      <ion-label>Ordenar</ion-label>
+        <ion-icon slot="end" name="arrow-forward"></ion-icon>
+        <ion-select color="light" >
+          <ion-select-option color="light" value="mayor">De mayor a menor precio</ion-select-option>
+          <ion-select-option color="light" value="menor">De menor a mayor precio</ion-select-option>
+          <ion-select-option color="light" value="destacados">Destacados</ion-select-option>
+          <ion-select-option color="light" value="favoritos">Favoritos</ion-select-option>
+        </ion-select>
+   </ion-item>
+
+
+  <ion-item>
+    <ion-icon color="medium" slot="start" name="pricetag"></ion-icon> 
+      <ion-label>Promociones</ion-label>
+      <ion-select multiple="true" cancelText="Cancelar" okText="Okay!">
+        <ion-select-option value="bacon">50%</ion-select-option>
+        <ion-select-option value="olives">45%</ion-select-option>
+        <ion-select-option value="xcheese">40%</ion-select-option>
+        <ion-select-option value="peppers">35%</ion-select-option>
+        <ion-select-option value="mushrooms">30%</ion-select-option>
+        <ion-select-option value="onions">25%</ion-select-option>
+        <ion-select-option value="pepperoni">20%</ion-select-option>
+        <ion-select-option value="pineapple">15%</ion-select-option>
+        <ion-select-option value="sausage">10%</ion-select-option>
+        <ion-select-option value="Spinach">5%</ion-select-option>
+      </ion-select>
+        <ion-icon slot="end" name="arrow-forward"></ion-icon>
+   </ion-item>
+  
+        <ion-item>
+          <ion-icon color="medium" slot="start" name="analytics"></ion-icon> 
+            <ion-label>Dietas</ion-label>
+            <ion-select multiple="true" cancelText="Cancelar" okText="Okay!">
+              <ion-select-option value="bacon">Vegana</ion-select-option>
+              <ion-select-option value="olives">Vegetariana</ion-select-option>
+              <ion-select-option value="xcheese">Sin Gluten</ion-select-option>
+              <ion-select-option value="peppers">Sin TACC</ion-select-option>
+              <ion-select-option value="mushrooms">Ayuno Intermitente</ion-select-option>
+              <ion-select-option value="onions">Green Peace</ion-select-option>
+            </ion-select>
+              <ion-icon slot="end" name="arrow-forward"></ion-icon> </ion-item>
+
+
+<div style="margin-left: 4w;">
+  <h3>Categorías</h3>
+</div>
+  <ion-item>
+    <ion-checkbox slot="end" color="danger"></ion-checkbox>
+    <ion-label>Americano (8)</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="end" color="danger"></ion-checkbox>
+    <ion-label>Asiatico (8)</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="end" color="danger"></ion-checkbox>
+    <ion-label>Burritos (8)</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="end" color="danger"></ion-checkbox>
+    <ion-label>Cadenas favoritas (8)</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="end" color="danger"></ion-checkbox>
+    <ion-label>chino (8)</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="end" color="danger"></ion-checkbox>
+    <ion-label>Peruano (8)</ion-label>
+  </ion-item>
+
+  <ion-item color="danger"
+    style="position: fixed; bottom: 11px; width: 100%; left: 0; border-radius: 25px;">
+    <ion-label class="ion-text-center">Listo</ion-label>
+    <ion-icon size="large" name="checkmark" slot="end"></ion-icon>
+  </ion-item>
+
+</ion-content>

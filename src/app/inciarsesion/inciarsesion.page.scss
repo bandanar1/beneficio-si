@@ -1,0 +1,31 @@
+.contenido{
+    height: 100vh;
+    background-image: url(../../assets/imgs/fondoiniciarsesion.png);
+    background-size: 100% 100%;
+}
+.user-img{
+    height: 90px;
+    width: 90px; 
+}
+
+.div-margin{
+    margin-bottom: 6vh; 
+    margin-top: 5vh;
+}
+
+.fontface{
+    font-family: 'Alex Brush', cursive;
+    font-size: 20vw;
+}
+ion-item{
+    --background: transparent;
+ }
+
+
+ ion-label{
+     --background: white; }
+
+ion-input{
+     --background: transparent; }
+
+     ion-select{ color: white;}

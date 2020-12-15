@@ -1,0 +1,122 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="light" (click)="mostrarcategoria()">
+        <ion-icon name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="light">
+      <p routerLink="/segunda" class="fonface">BeneficioSi</p>
+    </ion-title>
+
+    <ion-icon routerLink="/map" slot="end" class="custom-icons" style="color: white;" name="globe"></ion-icon>
+    <ion-icon slot="end" routerLink="/canasta" class="custom-icons" style="color: white;" name="cart"></ion-icon>
+    <ion-icon slot="end" routerLink="/perfil" class="custom-icons" style="color: white;" name="person"></ion-icon>
+
+  </ion-toolbar>
+  <div class="mostrarmenu12" id="menu1"
+    style="display: none; background: rgb(235, 78, 78, .5); border-radius: 20px; position: absolute;">
+    <ion-item class="mostrarmenu12">Gastronomia</ion-item>
+    <ion-item class="mostrarmenu12">Espectaculos</ion-item>
+    <ion-item class="mostrarmenu12">Boliches</ion-item>
+    <ion-item class="mostrarmenu12">Supermercados</ion-item>
+    <ion-item class="mostrarmenu12">Farmacias</ion-item>
+  </div>
+
+
+
+
+</ion-header>
+
+
+<ion-content >
+
+<ion-item routerLink="/ubicacion" color="danger" style="margin-bottom: -6%;bottom: 11px; width: 100%; left: 0; border-radius: 25px;margin-top: 6%;">
+  <ion-label class="ion-text-center" style="margin-left: -50%;">Viamonte 2660<ion-icon size="15" name="pin"color="light"></ion-icon></ion-label>
+  <ion-icon name="arrow-forward"></ion-icon>
+   
+</ion-item>
+  <h1>
+    <ion-text style="margin-left: 10px;" color="danger">
+      Categorias
+    </ion-text>
+  </h1>
+
+  <div class="box2" style="padding: 5px;">
+    <div style="border-radius:5px; width: 11pc;" *ngFor="let categorias of categorias" [ngStyle]="{ 'background-image': 'url(' + categorias.img + ')'}" class="box-element-category">      
+      <ion-badge style="position: absolute; top: -5px; right: -5px;" color="tertiary">
+        Hoy
+      </ion-badge>
+      <div class="ion-text-center" style="border-radius:5px; background: rgba(0, 0, 0, .5); padding: 15px;">        
+        <div class="ion-text-center">          
+          <h3 style="margin: 0 0;">{{categorias.name}}</h3>
+          <p style="margin: 5px 0;">
+            <ion-icon name="pin" slot="start"></ion-icon>
+            {{categorias.address}}
+          </p>
+        </div>
+        <ion-button color="tertiary" size="small">                   
+          <ion-icon name="flash" slot="start"></ion-icon>  
+          <ion-label *ngIf="categorias.offert && categorias.offert.static">            
+            {{categorias.offert?.static?.name}} {{categorias.offert?.static?.value}}{{categorias.offert?.static?.symbol}}
+          </ion-label>
+          <ion-label *ngIf="categorias.offert && categorias.offert.porcent">
+            {{categorias.offert.porcent}}%
+          </ion-label>
+        </ion-button>
+      </div>      
+    </div>
+  </div>
+  
+  <h1>
+    <ion-text style="margin-left: 10px;" color="danger">
+      Destacados
+    </ion-text>
+  </h1>
+
+  <div class="box2">
+    <div *ngFor="let destacado of destacados" class="box-element">
+      <img src="{{destacado.img}}" alt="" class="box-img">
+    </div>
+  </div>
+
+  <div style="width: 95%; margin-left: 2.5%; margin-top: 5%;">
+    <img style="border-radius: 5px; height: 100px; width: 100%;" src="../../assets/imgs/lasagna.png" alt="">
+  </div>
+
+  <h1>
+    <ion-text style="margin-left: 10px;" color="danger">
+      Promociones
+    </ion-text>
+  </h1>
+  <div class="box2">
+    <div *ngFor="let item of promociones" class="box-element">
+      <img [src]="item.img" alt="" class="box-img2">
+      <div class="offer-info">
+        <ion-label>
+          <h3><b>{{item.nombre}}</b></h3>
+        </ion-label>
+        <div style="display: flex; justify-content: space-between;">
+          <p size="6">$10</p>
+          <p style="text-decoration: line-through;">
+            <ion-text size="6" color="medium">
+              $100
+            </ion-text>
+          </p>          
+        </div>        
+        <p size="6"class="offert-description">
+          {{item.descripcion}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+ 
+
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "beneficiosi",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

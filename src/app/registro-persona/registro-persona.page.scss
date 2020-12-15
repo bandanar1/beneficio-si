@@ -1,0 +1,25 @@
+
+    .contenido{
+        position: relative;
+        min-height: 100vh;        
+        background: url(../../assets/imgs/fiesta.jpg);
+        background-size: 200% 100%;
+        min-height: 100vh;
+}
+
+.fontface{
+    font-family: 'Alex Brush', cursive;
+    font-size: 20vw;
+}
+ion-item{
+    --background: rgba(0, 0, 0, .05);
+ }
+
+
+ ion-label{
+     --background: white; }
+
+ion-input{
+     --background: transparent; }
+
+     ion-select{ color: white;}

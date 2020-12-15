@@ -1,0 +1,30 @@
+<ion-content>
+  
+  <ion-back-button color="light" slot="start"></ion-back-button>
+
+
+  <div class="contenido">
+    <div class="sombra">
+      <div style="display: flex; justify-content: space-evenly;">
+
+        <img style="width: 80px; height: 80px; margin-top: 20vw;" src="../../assets/imgs/logo-beneficios-si.png" alt="">
+        <ion-text color="light">
+          <h1 class="fontface" style="margin-top: 25vw; font-size: 40px">BeneficioSi</h1>
+        </ion-text>
+      </div>
+      <div class="ion-text-center padre_de_botones">
+        <ion-button class="registrate" routerLink="/registro-persona" color="danger" expand="full" (click)="ingresar(usuario)">
+          Persona
+        </ion-button>
+        <br>
+        <ion-button routerLink="/registro-empresa" class="button-custom" expand="full">
+          Empresa
+          <br>
+        </ion-button>
+      </div>
+    </div>     
+  </div>
+
+
+
+</ion-content>

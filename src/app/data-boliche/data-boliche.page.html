@@ -1,0 +1,287 @@
+<ion-header [ngSwitch]="boton123">
+  <ion-toolbar *ngIf="boton123 !== 3" class="ion-text-center">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" color="dark" (click)="atras()">
+        <ion-icon name="arrow-dropleft-circle" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label class="ion-text-center">
+      <p>Reservar entrada en</p>
+      <h2><b>Brooklyn (Palermo Hollywood)</b></h2>
+    </ion-label>
+    <ion-buttons slot="end">
+      <ion-button slot="end" fill="clear" color="dark">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar *ngSwitchCase="3">
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-label color="danger" class="ion-text-center">
+      <p>Reservar en</p>
+      <h2><b>Brooklyn (Palermo Hollywood)</b></h2>
+      <ion-icon style="margin-left: 50%;" name="checkmark-circle"></ion-icon>
+    </ion-label>
+    <ion-buttons slot="end">
+      <ion-button slot="end" fill="clear" color="dark">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides id="slider1" #slider1 style="min-height: 100%;" pager="true" [options]="slideOpts">
+    <ion-slide>
+      <!--Primer Slider-->
+      <div *ngFor="let item of lista; index as i">
+        <div [ngSwitch]="item.selected">
+          <ion-item *ngSwitchCase="false" button color="dark" (click)="item.show =! item.show; item.selected = false">
+            <ion-label class="ion-text-center">
+              <b>
+                <ion-icon name="{{item.icon}}" slot="start"></ion-icon>
+              </b>
+              {{item.titulo}}
+            </ion-label>
+          </ion-item>
+          <ion-item class="animate__animated animate__slideInRight" *ngSwitchCase="true" button
+            (click)="item.show =! item.show; item.selected = false">
+            <ion-label>
+              <b>
+                <ion-icon name="{{item.icon}}" slot="start"></ion-icon>
+              </b>
+              {{item.titulo2}}
+            </ion-label>
+
+            <p *ngIf="i == 0" slot="end">{{datos.personas}}</p>
+
+            <ion-label class="ion-text-right" *ngIf="i == 1" slot="end">
+              <h3>{{datos.fecha1.dia}}</h3>
+              <p>{{datos.fecha1.fecha}} {{datos.fecha1.mes}}</p>
+            </ion-label>
+
+            <p *ngIf="i == 2" slot="end">{{datos.hora}}</p>
+          </ion-item>
+        </div>
+
+        <div *ngIf="item.show" class="animate__animated animate__backInDown">
+          <div *ngFor="let item2 of item.listado;">
+            <ion-item *ngIf="i == 0" (click)="item.selected = true; item.show =! item.show; setPersonas(item2.valor)">
+              <ion-label>
+                <ion-icon name="radio-button-off" slot="start" color="danger"></ion-icon>
+                {{item2.titulo}}
+              </ion-label>
+            </ion-item>
+            <ion-item *ngIf="i == 1" (click)="item.selected = true; item.show =! item.show; setFecha(item2)">
+              <ion-label>
+                <h3>
+                  <ion-icon name="radio-button-off" color="danger"></ion-icon>
+                  {{item2.dia}}
+                </h3>
+                <p>{{item2.fecha}} {{item2.mes}}</p>
+              </ion-label>
+              <p slot="end" class="ion-text-right">sin promocion</p>
+            </ion-item>
+            <ion-item *ngIf="i == 2" (click)="item.selected = true; item.show =! item.show; setHora(item2.title)">
+              <ion-label>
+                <ion-icon name="radio-button-off" slot="start" color="danger"></ion-icon>
+                {{item2.title}}
+              </ion-label>
+              <p slot="end" class="ion-text-right">{{item2.promocion}}</p>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+
+    </ion-slide>
+    <!--Primer Slider-->
+
+    <ion-slide>
+      <!--Segundo Slider-->
+      <div class="ion-text-left ion-padding">
+        <p><b>Franco Duek</b></p>
+        <p>
+          <ion-icon name="mail" slot="start"></ion-icon>
+          francoduek@gmail.com
+        </p>
+        <ion-list>
+          <ion-item lines="none" class="inputs-data ion-margin-bottom">
+            <ion-input [(ngModel)]="telefono">
+              <ion-icon name="phone-portrait" class="ion-margin-end" slot="start"></ion-icon>
+            </ion-input>
+          </ion-item>
+          <ion-item lines="none" class="inputs-data">
+            <ion-input placeholder="Comentarios (Opcinal)" [(ngModel)]="comentario">
+              <ion-icon name="chatbubbles" class="ion-margin-end" slot="start"></ion-icon>
+            </ion-input>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-slide>
+    <!--Segundo Slider-->
+
+    <ion-slide>
+      <!--Tercer Slider-->
+      <ion-card mode="ios">
+        <div>
+          <h3>Brooklyn (Palermo Hollywood)</h3>
+          <p>Entrada a nombre de Franco Duek</p>
+        </div>
+        <div>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="ion-text-center" style="border-right: 1px solid gray;">
+                <ion-label>
+                  <ion-icon style="font-size: large;" color="dark" name="calendar"></ion-icon>
+                  <p>{{datos.fecha1.dia}} {{datos.fecha1.fecha}} </p>
+                </ion-label>
+              </ion-col>
+              <ion-col class="ion-text-center">
+                <ion-label>
+                  <ion-icon style="font-size: large;" color="dark" name="pricetag"></ion-icon>
+                  <p>{{datos.hora}}</p>
+                </ion-label>
+              </ion-col>
+              <ion-col class="ion-text-center" style="border-left: 1px solid gray;">
+                <ion-label>
+                  <ion-icon style="font-size: large;" color="dark" name="people"></ion-icon>
+                  <p>{{datos.personas}}</p>
+                </ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-item lines="none">
+            <ion-icon name="paper" slot="start" color="dark"></ion-icon>
+            <ion-label>
+              <h3>Sin</h3>
+              <p>Promoción</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-text-wrap">
+              <p>los puntos se acreditan cuando se confirma tu asistencia. ¡Recordá identificarte al llegar!</p>
+            </ion-label>
+          </ion-item>
+          <div>
+            <ion-grid>
+              <ion-row>
+                <ion-col class="ion-text-center" style="border-right: 1px solid gray;">
+                  <ion-label>
+                    <a class="ion-text-center" target="_blank"
+                      href="https://api.whatsapp.com/send?phone=5491123916734&amp;text=Hola soy Franco Duek, Acabo de reservar una entrada para {{datos.personas}} personas, para el día {{datos.fecha1.dia}} y el tipo de entrada que quiero reservar es: {{datos.hora}}">
+                      <ion-icon style="font-size: large;" color="dark" name="logo-whatsapp"></ion-icon>
+                    </a>                    
+                    <p>Confirmar Entrada</p>
+                  </ion-label>
+                </ion-col>
+                <ion-col class="ion-text-center">
+                  <ion-label>
+                    <ion-icon style="font-size: large;" color="dark" name="calendar"></ion-icon>
+                    <p>Agendar</p>
+                  </ion-label>
+                </ion-col>
+                <ion-col class="ion-text-center" style="border-left: 1px solid gray;">
+                  <ion-label>
+                    <ion-icon style="font-size: large;" color="dark" name="pin"></ion-icon>
+                    <p>Como llegar</p>
+                  </ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </div>
+      </ion-card>
+    </ion-slide>
+    <!--Tercer Slider-->
+
+  </ion-slides>
+</ion-content>
+<ion-footer [ngSwitch]="boton123" class="ion-text-center ion-no-border">
+
+  <!--BOTON DE LA PANTALLA #1-->
+  <div *ngSwitchCase="1" class="ion-padding">
+    <ion-button *ngIf="todoCorrecto" shape="round" color="danger" (click)="siguiente()">
+      Aceptar
+    </ion-button>
+    <ion-button disable *ngIf="!todoCorrecto" shape="round" color="danger">
+      Aceptar
+    </ion-button>
+  </div>
+  <!--BOTON DE LA PANTALLA #1-->
+
+  <!--BOTON DE LA PANTALLA #2-->
+  <div class="ion-text-left ion-padding" *ngSwitchCase="2"
+    style="min-height: 40vh; background: url(../../assets/fondoGris.png); background-size: 100%;">
+    <br>
+    <p>{{datos.fecha1.dia}} {{datos.fecha1.fecha}} a las {{datos.hora}} para {{datos.personas}} personas</p>
+    <ion-item lines="none" style="--background: transparent">
+      <ion-icon name="paper" slot="start"></ion-icon>
+      <ion-label>
+        <h3>Sin</h3>
+        <p>Promoción</p>
+      </ion-label>
+    </ion-item>
+    <div>
+      <ion-button *ngIf="!cargando" shape="round" expand="block" color="danger" (click)="siguiente()">
+        RESERVAR
+
+      </ion-button>
+      <ion-button *ngIf="cargando" disable shape="round" expand="block" color="dark">
+        <ion-spinner name="lines"></ion-spinner>
+        CARGANDO
+      </ion-button>
+    </div>
+  </div>
+  <!--BOTON DE LA PANTALLA #2-->
+
+
+  <!--BOTON DE LA PANTALLA #3-->
+  <div class="ion-text-left" *ngSwitchCase="3"
+    style="min-height: 40vh; background: url(../../assets/fondoGris.png); background-size: 100%;">
+    <br>
+    <ion-item style="--background: transparent;" button (click)="cacelarReserva()">
+      <ion-label class="ion-text-center">
+        <ion-icon name="close-circle"></ion-icon>
+        Cancelar reserva de entrada
+      </ion-label>
+    </ion-item>
+    <ion-item style="--background: transparent;">
+      <ion-label class="ion-text-wrap">
+        <h3>¿Te gusta Brooklyn (Palermo Hollywood)?</h3>
+        <p>Guardalo y recibí sus novedades.</p>
+      </ion-label>
+      <ion-buttons style="border-left: 1px solid gray;" slot="end">
+        <ion-button class="ion-text-center" fill="clear" color="dark">
+          <ion-icon slot="icon-only" name="heart"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <h5 class="ion-padding">¿Estas disfrutando de BeneficioSi?</h5>
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button color="danger">
+              <ion-icon name="sad" slot="start"></ion-icon>
+              No
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button color="danger">
+              Poco
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button color="danger">
+              <ion-icon name="happy" slot="start"></ion-icon>
+              Si
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <!--BOTON DE LA PANTALLA #3-->
+</ion-footer>

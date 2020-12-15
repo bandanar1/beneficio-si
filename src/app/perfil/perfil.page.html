@@ -1,0 +1,160 @@
+<ion-header class="color_primario2">
+  <ion-back-button></ion-back-button>
+  <ion-grid>
+    <h4 style="display: flex; align-items: center;">
+      <ion-button (click)="goBack()" fill="clear" size="small" color="light">
+        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-text color="light">Resumen</ion-text>
+    </h4>
+    <ion-row>
+      <ion-col size="4" style="position: relative;">
+        <img *ngIf="user.profile.image !== '' && user.profile.image !== null; else invitadoImg"
+          src="{{user.profile.image}}" alt="" (click)="selectImage()" class="redonda">
+        <ng-template #invitadoImg>
+          <ion-icon (click)="selectImage()" name="person-circle-outline" class="img-user" color="light">
+          </ion-icon>
+          <ion-button size="small" [class.hidden]="cargando" class="button-edit" color="secondary"
+            (click)="selectImage()">
+            <ion-icon name="add" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ng-template>
+      </ion-col>
+      <ion-col size="8">
+        <ion-label color="light">
+          <h3>
+            <ion-icon name="person"></ion-icon> Nombre: {{user.profile.firstname}} {{user.profile.lastname}}
+          </h3>
+          <h3>
+            <ion-icon name="call"></ion-icon> Telefono: {{user.profile.phone}}
+          </h3>
+          <h3>
+            <ion-icon name="pin"></ion-icon> Dirección: {{user.address.state.name}},
+            {{user.address.city?.name}}, {{user.address.address}}
+          </h3>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label color="light">
+          <h3>{{user.profile.bio}}</h3>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-segment mode="md" scrollable [(ngModel)]="slideNumber" color="light" (ionChange)="changeSlide()">
+      <ion-segment-button value="0">
+        <ion-icon name="person" color="light"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <ion-icon name="pin" color="light"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-icon name="settings" color="light"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-grid>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-slides (ionSlideWillChange)="slidesChanged($event)" #slidesconfig>
+    <ion-slide class="ion-padding ion-text-center" style="display: block;">
+      <form (ngSubmit)="onSubmit()">
+        <h2>
+          <ion-text color="medium">
+            Información Personal
+          </ion-text>
+        </h2>
+        <ion-item mode="md">
+          <ion-label position="floating" color="danger">Nombre</ion-label>
+          <ion-input [(ngModel)]="user.profile.firstname" name="firstname"></ion-input>
+        </ion-item>
+        <ion-item mode="md">
+          <ion-label position="floating" color="danger">Apellido</ion-label>
+          <ion-input [(ngModel)]="user.profile.lastname" name="lastname"></ion-input>
+        </ion-item>
+        <ion-item mode="md">
+          <ion-label position="floating" color="danger">Telefono</ion-label>
+          <ion-input [(ngModel)]="user.profile.phone" name="phone"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item mode="md">
+          <ion-textarea [(ngModel)]="user.profile.bio" placeholder="Biografía..." name="bio"></ion-textarea>
+        </ion-item>
+      </form>
+    </ion-slide>
+
+    <ion-slide class="ion-padding ion-text-center" style="display: block;">
+      <h2>
+        <ion-text color="medium">
+          Ubicación
+        </ion-text>
+      </h2>
+      <ion-item>
+        <ion-label color="danger" position="floating">Provincia</ion-label>
+        <ion-select [(ngModel)]="user.address.state" [compareWith]="compareWithFn" okText="Ok" cancelText="cancelar">
+          <ion-select-option *ngFor="let state of states" [value]="state">{{state.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label color="danger" position="floating">Partido</ion-label>
+        <ion-select [(ngModel)]="user.address.city" [compareWith]="compareWithFn" okText="Ok" cancelText="cancelar">
+          <ion-select-option *ngFor="let city of cities" [value]="city">{{city.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item mode="md">
+        <ion-label color="danger" position="floating">Direción</ion-label>
+        <ion-textarea [(ngModel)]="user.address.address"></ion-textarea>
+      </ion-item>
+      <br>
+      <ion-button *ngIf="user.address.longitude == null && user.address.latitude == null; else validatelatlng"
+        mode="ios" color="danger"
+        [class.animate__pulse]="user.address.longitude == null && user.address.latitude == null"
+        class="animate__animated animate__infinite" (click)="openMap()">
+        Abrir Mapa
+        <ion-icon name="map" slot="end"></ion-icon>
+      </ion-button>
+      <ng-template #validatelatlng>
+        <div class="ion-text-center animate__animated animate__fadeInUp">
+          <ion-icon style="font-size: xx-large;" color="success" name="checkmark-circle-outline"></ion-icon>
+          <p>
+            <ion-text color="medium">
+              Se ha guardado tu ubícacion en google maps.
+            </ion-text>
+          </p>
+          <ion-button color="danger" mode="ios" (click)="openMap()">
+            Cambiar mi Ubicación
+          </ion-button>
+        </div>
+      </ng-template>
+    </ion-slide>
+
+    <ion-slide class="ion-padding ion-text-center" style="display: block;">
+      <h2>
+        <ion-text color="medium">
+          Configuración
+        </ion-text>
+      </h2>
+      <ion-item>
+        <ion-label class="ion-text-wrap">Silenciar Botones</ion-label>
+        <ion-checkbox color="success" slot="start" mode="md" (ionChange)="toggleSound()" [(ngModel)]="silenciar">
+        </ion-checkbox>
+      </ion-item>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>
+
+<ion-footer class="ion-text-center ion-no-border">
+  <ion-button *ngIf="slideNumber == 0" class="color_primario" color="danger" mode="ios" (click)="saveProfile()">
+    guardar cambios
+  </ion-button>
+  <ion-button *ngIf="slideNumber == 1" class="color_primario" color="danger" mode="ios" (click)="saveAddress()">
+    guardar dirección
+  </ion-button>
+  <ion-button *ngIf="slideNumber == 2" class="color_primario" color="danger" mode="ios" (click)="save()">
+    guardar configuración
+  </ion-button>
+</ion-footer>

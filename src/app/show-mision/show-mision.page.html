@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar style="--background: transparent;" size="large"><ion-buttons slot="start">
+    <ion-button (click)="closeModal()">
+      <ion-icon color="light" name="close" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title color="light">Detalles de la Misión</ion-title></ion-toolbar>
+<ion-toolbar style="--background: transparent;"></ion-toolbar>
+  <ion-toolbar style="--background: transparent;">
+    <ion-thumbnail slot="start">
+      <img class="img" src="{{Mision.image}}" alt="">
+    </ion-thumbnail>
+    <ion-label>
+      <h1 class="titulo">{{Mision.nombre}}</h1>
+      <h3 color="light" class="descripcion">{{Mision.descripcion}}</h3>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h4>Para completar la mision y ganar los 100 benepuntos debes:</h4>
+  <p>- Ir hasta corrientes 2682.</p>
+  <p>- Ingresar al local de {{Mision.nombre}}.</p>
+  <p>- Tomar una foto del precio del menu del dia lunes.</p>
+  <p>- Escribir el valor del combo del dia.</p>
+  <p>-recibí tus <ion-text color="danger">100 <img style="max-width: 7%;" src="../../assets/imgs/logo-beneficios-si.png" alt=""></ion-text></p>
+  
+</ion-content>
+<ion-footer>
+  <ion-button expand="full" color="danger">
+    Iniciar Mision
+  </ion-button> 
+</ion-footer>

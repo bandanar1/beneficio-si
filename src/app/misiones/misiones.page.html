@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button color="light" (click)="mostrarcategoria()">
+            <ion-icon name="menu"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title color="light">
+        <p routerLink="/segunda" class="fonface">BeneficioSi</p>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-buttons routerLink="/map">
+        <ion-icon slot="end" class="custom-icons" style="color: white;" name="globe"></ion-icon>
+      </ion-buttons>
+      <ion-buttons>
+        <ion-icon slot="end" class="custom-icons" style="color: white;" name="cart"></ion-icon>
+      </ion-buttons>
+      <ion-buttons>
+        <ion-icon slot="end" class="custom-icons" style="color: white;" name="person"></ion-icon>
+      </ion-buttons>
+    </ion-buttons>
+</ion-toolbar>
+<div class="mostrarmenu12" id="menu1"
+    style="display: none; background: rgb(235, 78, 78, .5); border-radius: 20px; position: absolute;">
+    <ion-item class="mostrarmenu12">Gastronomia</ion-item>
+    <ion-item class="mostrarmenu12">Espectaculos</ion-item>
+    <ion-item class="mostrarmenu12">Boliches</ion-item>
+    <ion-item class="mostrarmenu12">Supermercados</ion-item>
+    <ion-item class="mostrarmenu12">Farmacias</ion-item>
+</div>
+</ion-header>
+
+<ion-content>
+  <ion-segment mode="md" color="danger" [(ngModel)]="selectedView">
+    <ion-segment-button  value="lista">
+      <ion-label>Lista</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="mapa">
+      <ion-label>Mapa</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngStyle]="{'display': (selectedView=='lista') ? 'block' : 'none'}">
+    <ion-item (click)="moreInfo(item)"  *ngFor="let item of misiones">
+      <ion-thumbnail slot="start">
+        <img src="{{item.image}}" alt=""> 
+      </ion-thumbnail>
+      <ion-label>
+        <h3>
+          {{item.nombre}}
+          <ion-icon name="md-document"></ion-icon>
+          <ion-icon name="camera"></ion-icon>
+        </h3>
+        <p class="ion-text-wrap">
+          {{item.descripcion}}
+        </p>
+      </ion-label>
+      <ion-button size="small" color="danger" shape="round" slot="end">
+        +100
+      </ion-button>
+    </ion-item>
+  </div>
+  <div #googlemaps id="googlemaps" [ngStyle]="{'display': (selectedView=='mapa') ? 'block' : 'none'}">
+
+  </div>
+  
+
+</ion-content>
